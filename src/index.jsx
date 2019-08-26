@@ -1,5 +1,13 @@
 import 'raf/polyfill';
 import React from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-render(<div>Hello World!</div>, document.getElementById('root'));
+import App from './components/app';
+
+render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root')
+);
