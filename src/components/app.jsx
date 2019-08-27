@@ -12,14 +12,14 @@ const App = () => {
       <Switch>
         <Route
           exact
-          path="/"
+          path="/properties"
           component={Properties}
         />
       </Switch>
       <Switch>
         <Route
           exact
-          path="/"
+          path="/AddProperty"
           component={AddProperty}
         />
       </Switch>

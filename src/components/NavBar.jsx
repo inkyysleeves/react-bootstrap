@@ -14,11 +14,14 @@ const NavBar = () => {
         </span>
       </div>
       <ul className="Nav">
-        <Link className="item" to="/AddProperty">
-            home
+        <Link className="item" to="/">
+          Home
         </Link>
-        <Link className="item" to="properties">
-            properties
+        <Link className="item" to="/AddProperty">
+            Add Property
+        </Link>
+        <Link className="item" to="/properties">
+            Properties
         </Link>
       </ul>
     </div>

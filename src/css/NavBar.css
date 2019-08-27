@@ -29,6 +29,6 @@ div {
         padding: 5px;
         flex-direction: row;
 }
-li:hover {
+.item:hover {
     background-color: grey;
 }
