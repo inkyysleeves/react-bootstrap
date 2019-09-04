@@ -3,6 +3,9 @@
 }
 .button-font {
     margin: 2px !important;
-    padding: 2px !important;
+    padding: .5em .875em;
     font-family: 'Nunito Sans', sans-serif;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: row;
 }
