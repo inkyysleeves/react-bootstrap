@@ -1,33 +1,43 @@
 import React from 'react';
 import Axios from 'axios';
+import PropertyCard from '../components/PropertyCard';
+import '../css/Properties.css';
 
 class Properties extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      properties: '',
-    }
-  };
-};
-    componentDidMount() {
-      Axios.get('http://localhost:3000/api/v1/PropertyListing')
-        .then(res => {
-          const properties = res.data;
-          this.setState({ properties });
-          console.log(this.state.properties);
-        })
-        .catch(() => this.setState({
-          error: true,
-        }));
-    }
-    render() {
-      return (
-        <ul>
-          { this.state.properties.map(houses => <li>{this.state.properties}</li>)}
-        </ul>
-      )
-    }
+      properties: null,
+      error: null,
+    };
   }
-  
+
+  componentDidMount() {
+    Axios.get('http://localhost:3000/api/v1/PropertyListing')
+      .then(res => {
+        const properties = res.data;
+        this.setState({ properties });
+      })
+      .catch(() => this.setState({
+        error: true,
+      }));
+  }
+
+  render() {
+    if (!this.state.properties) {
+      return null;
+    }
+
+    return (
+      <div className="propertyContainer">
+        {this.state.properties.map(property => {
+          return <PropertyCard key={property._id} property={property} />;
+        })
+        }
+      </div>
+    );
+  }
+}
+
 
 export default Properties;
