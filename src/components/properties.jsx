@@ -7,8 +7,8 @@ class Properties extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      properties: null,
-      error: null,
+      properties: '',
+      error: false,
     };
   }
 
@@ -19,7 +19,6 @@ class Properties extends React.Component {
         this.setState({ properties });
       })
       .catch(() => this.setState({
-        error: true,
       }));
   }
 
